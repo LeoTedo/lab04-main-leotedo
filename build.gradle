@@ -1,0 +1,30 @@
+plugins {
+    id "application"
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'junit:junit:4.13.2'
+}
+
+application {
+    mainClassName = 'it.unimi.di.prog2.rubamazzetto.Rubamazzetto'
+}
+
+run {
+    enableAssertions = true
+}
+
+test {
+    testLogging {
+        events 'PASSED', 'FAILED'
+    }
+}
+
+javadoc {
+    options.tags = ["pre:a:Preconditions:", "post:a:Postconditions:"]
+    options.addStringOption('Xdoclint:none', '-quiet')
+}
